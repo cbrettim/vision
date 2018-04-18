@@ -20,7 +20,7 @@
 #include <yarp/os/all.h>
 #include <stdio.h>
 #include "String.h"
-
+#include <image.h>
 
 // Espacios de nombres
 
@@ -84,6 +84,10 @@ int main()
 
         cout<<"La conexión con el topic de ROS se ha establecido correctamente"<<endl;
     }
+
+    // Instanciamos objeto para guardarlo
+
+    image Objeto_de_imagenes();
 
     // Leemos datos del topic
 
