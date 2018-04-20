@@ -26,21 +26,43 @@
 #include "String.h"
 #include <image.h>
 
+
+#include <string>
+#include <vector>
+#include <sys/time.h>
+#include <unistd.h>
+#include <opencv2/opencv.hpp>
+
+// Include ROS mesage headers. Generated with yarpidl_rosmsgs
+
+#include "msg/sensor_msgs_CameraInfo.h"
+#include "msg/sensor_msgs_Image.h"
+#include "msg/sensor_msgs_CompressedImage.h"
+#include "msg/sensor_msgs_PointCloud2.h"
+
+#define TOPIC_IMAGE     "/xtion/rgb/image_raw/compressed"
+
+
+
+typedef sensor_msgs_CompressedImage Image_t;
+yarp::os::Subscriber<Image_t> inImagePort;
+
 //***************************************
 //***************************************
 // Espacios de nombres
 //***************************************
 //***************************************
 
+using namespace cv;
 using namespace std;
 using namespace yarp::os;
 
 
-//***************************************
-//***************************************
+//---------------------------------------
+//---------------------------------------
 // Función main
-//***************************************
-//***************************************
+//---------------------------------------
+//---------------------------------------
 
 int main()
 {
@@ -162,12 +184,80 @@ int main()
 
     data=yarp_read_ros();
 
+
+
+    //***************************************
+    // Obtener una imagen de TIAGo
+    //***************************************
+
+    yarp::os::Node rosNode("/obj_image_test");
+
+
+        cout<<"Analizando red YARP..."<<endl;
+        fflush(stdout);
+        if (!yarp.checkNetwork()) {
+            cout<<"Lo siento, no se ha encontrado red de YARP"<<endl;
+            return 1;
+        }else{
+            cout<<"Listo, se ha encontrado red de YARP"<<endl;
+        }
+        printf("[OK]\n");
+
+
+        if (!inImagePort.topic(TOPIC_IMAGE)) {
+            cout<<"Error al conectarse al topic de ROS"<<endl;
+            return 1;
+        }else{
+            cout<<"Conexión con el topic de ROS establecida correctamente"<<endl;
+        }
+
+        namedWindow("image");
+
+        Image_t *frame;
+
+        struct timeval start, end;
+        long secs_used,micros_used;
+
+
+        char pressedKey;
+
+        while(true) {
+            gettimeofday(&start, NULL);
+
+
+            frame = inImagePort.read();
+
+            Mat rgbImage = decodeImage(frame);
+
+
+            imshow("image", rgbImage);
+
+            pressedKey = waitKey(0);
+
+            cout << "Key pressed: " << pressedKey << endl;
+
+            if (pressedKey == ' '){
+                cout << "Saving image..." << endl;
+                imwrite ("/home/tiagoentrenamiento/repos/vision/programs/RGBD-ROS-YARP/images/image.jpg", rgbImage);
+            }
+
+
+
+            gettimeofday(&end, NULL);
+
+            secs_used=(end.tv_sec - start.tv_sec); //avoid overflow by subtracting first
+            micros_used= ((secs_used*1000000) + end.tv_usec) - (start.tv_usec);
+            printf("Frame delay: [%f]\n", micros_used/1000000.0);
+    }
+
     return 0;
 }
 
-//***************************************
+
+
+//++++++++++++++++++++++++++++++++++++++++
 // Funciones
-//***************************************
+//++++++++++++++++++++++++++++++++++++++++
 
 //***************************************
 // YARP: Lee de ROS
@@ -207,3 +297,15 @@ void yarp_write_ros(String data){
 
     }
 
+
+//***************************************
+// OPENCV: Pasamos al objeto image
+//***************************************
+
+Mat decodeImage(Image_t *message) {
+    Mat image;
+
+    image = imdecode(Mat(message->data), IMWRITE_JPEG_QUALITY);
+
+    return image;
+}
