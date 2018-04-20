@@ -221,34 +221,7 @@ int main()
 
         char pressedKey;
 
-        while(true) {
-            gettimeofday(&start, NULL);
-
-
-            frame = inImagePort.read();
-
-            Mat rgbImage = decodeImage(frame);
-
-
-            imshow("image", rgbImage);
-
-            pressedKey = waitKey(0);
-
-            cout << "Key pressed: " << pressedKey << endl;
-
-            if (pressedKey == ' '){
-                cout << "Saving image..." << endl;
-                imwrite ("/home/tiagoentrenamiento/repos/vision/programs/RGBD-ROS-YARP/images/image.jpg", rgbImage);
-            }
-
-
-
-            gettimeofday(&end, NULL);
-
-            secs_used=(end.tv_sec - start.tv_sec); //avoid overflow by subtracting first
-            micros_used= ((secs_used*1000000) + end.tv_usec) - (start.tv_usec);
-            printf("Frame delay: [%f]\n", micros_used/1000000.0);
-    }
+        solicitar_image();
 
     return 0;
 }
@@ -308,4 +281,37 @@ Mat decodeImage(Image_t *message) {
     image = imdecode(Mat(message->data), IMWRITE_JPEG_QUALITY);
 
     return image;
+}
+
+//***************************************
+// Solicitar imagen
+//***************************************
+
+void solicitar_image(){
+
+    gettimeofday(&start, NULL);
+
+
+    frame = inImagePort.read();
+
+    Mat rgbImage = decodeImage(frame);
+
+
+    imshow("image", rgbImage);
+
+    pressedKey = waitKey(0);
+
+    cout << "Key pressed: " << pressedKey << endl;
+
+    if (pressedKey == ' '){
+        cout << "Saving image..." << endl;
+        imwrite ("/home/tiagoentrenamiento/repos/vision/programs/RGBD-ROS-YARP/images/image.jpg", rgbImage);
+    }
+
+
+
+    gettimeofday(&end, NULL);
+
+    secs_used=(end.tv_sec - start.tv_sec);
+    micros_used= ((secs_used*1000000) + end.tv_usec) - (start.tv_usec);
 }
