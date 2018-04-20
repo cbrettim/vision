@@ -138,7 +138,7 @@ int main()
 
     yarp::os::Subscriber<String> subscriber;
 
-    if (!subscriber.topic("/camera/rgb/image_color")) {
+    if (!subscriber.topic("/camera/rgb/image_raw")) {
         cerr<< "Lo siento, no se ha podido realizar la conexión con el topic de ROS";
         return -1;
     }else{
