@@ -30,7 +30,7 @@ void image::leer_imagen(string ruta)
             return -1;
         }
     namedWindow("Imagen: TIAGo", WINDOW_AUTOSIZE );
-    imshow("Imagen: TIAGo", image );
+    imshow("Imagen: TIAGo", imagen );
 
     waitKey(0);
 }
