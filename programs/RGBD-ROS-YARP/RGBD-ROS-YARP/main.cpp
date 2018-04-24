@@ -82,7 +82,7 @@ int main()
 
     char seleccion='0';// Variable de control menú de selección
 
-    while(seleccion!='5'){
+    while(seleccion!='6'){
 
     cout<<endl;
     cout<<"Por favor, selecione una de las opciones"<<endl;
@@ -90,7 +90,8 @@ int main()
     cout<<"2. Escribir a puerto ROS"<<endl;
     cout<<"3. Recibir imagen ROS"<<endl;
     cout<<"4. Extra ports"<<endl;
-    cout<<"5. Salir"<<endl;
+    cout<<"5. Tratar imagen"<<endl;
+    cout<<"6. Salir"<<endl;
     cout<<endl;
     cout<<" Ha introducido:"<<endl;
     cin>>seleccion;
@@ -129,6 +130,13 @@ int main()
 
     case '5':
 
+        cout<<"Ha seleccionado tratar imagen"<<endl;
+
+
+        break;
+
+    case '6':
+
         cout<<"Ha seleccionado salir"<<endl;
         cout<<"Hasta luego, apagando..."<<endl;
         break;
@@ -136,11 +144,7 @@ int main()
     default:
         cout<<"La opción introducida no es correcta, porfavor vuelva a intentarlo"<<endl;
 
-
-
     }
-
-
 
 }
     return 0;
