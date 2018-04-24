@@ -53,6 +53,13 @@ using namespace std;
 using namespace yarp::os;
 
 
+//--------------
+// Variables
+//--------------
+
+string ruta="/home/tiagoentrenamiento/repos/vision/programs/RGBD-ROS-YARP/images/image.jpg";
+
+
 //---------------------------------------
 //---------------------------------------
 // Función main
@@ -131,8 +138,8 @@ int main()
     case '5':
 
         cout<<"Ha seleccionado tratar imagen"<<endl;
-
-
+        image objeto_de_imagen_tratar;
+        objeto_de_imagen_tratar.leer_imagen(ruta);
         break;
 
     case '6':
