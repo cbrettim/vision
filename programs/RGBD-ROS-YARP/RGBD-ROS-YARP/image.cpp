@@ -20,6 +20,11 @@ image::image()
 {
 }
 
+void image::leer_imagen()
+{
+
+}
+
 
 image::~image()
 {
