@@ -58,7 +58,7 @@ using namespace yarp::os;
 class extra_ports
 {
 public:
-    extra_ports();
+    extra_ports();// Puertos a usar en un futuro
     ~extra_ports();
 };
 

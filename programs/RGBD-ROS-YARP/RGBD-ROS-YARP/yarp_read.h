@@ -58,8 +58,8 @@ using namespace yarp::os;
 class yarp_read
 {
 public:
-    yarp_read();
-    string recibir();
+    yarp_read();// Inicializa y se suscribe al puerto ROS
+    string recibir();// Recibe datos de ROS
     ~yarp_read();
 
 //----------------------

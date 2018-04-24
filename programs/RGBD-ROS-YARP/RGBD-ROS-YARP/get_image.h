@@ -59,9 +59,9 @@ using namespace yarp::os;
 class get_image
 {
 public:
-    get_image();
-    void solicitar_imagen();
-    Mat decodeImage(Image_t *message);
+    get_image();// Constructor inicializa
+    void solicitar_imagen();// Solicita imagen a ROS
+    Mat decodeImage(Image_t *message);// Usa OpenCV para mostrar la imagen
     ~get_image();
 };
 

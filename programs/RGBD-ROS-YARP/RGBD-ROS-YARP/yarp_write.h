@@ -59,8 +59,8 @@ using namespace yarp::os;
 class yarp_write
 {
 public:
-    yarp_write();
-    void escribir();
+    yarp_write();// Inicializa y suscribe del puerto de ROS
+    void escribir();// Escribe
     ~yarp_write();
 };
 
