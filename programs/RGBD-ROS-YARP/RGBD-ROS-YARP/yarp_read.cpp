@@ -29,7 +29,7 @@ yarp_read::yarp_read()
     //          YARP: Recibe de ROS
     //***************************************
 
-
+    cout<<"Suscribiendo a topic de ROS para leer de el..."<<endl;
     //***************************************
     // Instanciar nodo de escucha YARP
     //***************************************
