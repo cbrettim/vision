@@ -62,6 +62,7 @@ class ip_camera
 {
 public:
     ip_camera();
+    int ver_ip_camera();
     ~ip_camera();
 };
 
