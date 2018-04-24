@@ -102,8 +102,8 @@ int main()
     case '1':
 
         cout<<"Ha seleccionado leer de puerto ROS"<<endl;
-
-
+        yarp_read objeto_recibir_yarp;
+        objeto_recibir_yarp.recibir();
         break;
 
     case '2':
