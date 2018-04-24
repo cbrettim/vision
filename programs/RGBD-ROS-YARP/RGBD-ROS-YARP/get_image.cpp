@@ -23,6 +23,7 @@
 //+++++++++++++++++++++++++++++++++++++++++++++++++++
 get_image::get_image()
 {
+    cout<<" Conectando a topic ROS /obj_image_test"<<endl;
     yarp::os::Node rosNode("/obj_image_test");
 }
 

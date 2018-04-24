@@ -114,6 +114,8 @@ int main()
     case '3':
 
         cout<<"Ha seleccionado recibir imagen por ROS"<<endl;
+        get_image objeto_get_image;
+        objeto_get_image.solicitar_imagen();
         break;
 
     case '4':
