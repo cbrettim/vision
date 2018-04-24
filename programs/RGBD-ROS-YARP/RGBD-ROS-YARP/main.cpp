@@ -70,9 +70,9 @@ int main()
 
     Network yarp;
 
-    int seleccion=0;// Variable de control menú de selección
+    char seleccion='0';// Variable de control menú de selección
 
-    while(seleccion!=5){
+    while(seleccion!='5'){
 
     cout<<endl;
     cout<<"Por favor, selecione una de las opciones"<<endl;
@@ -89,27 +89,27 @@ int main()
     switch (seleccion){
 
 
-    case 1:
+    case '1':
 
         cout<<"Ha seleccionado leer de puerto ROS"<<endl;
         break;
 
-    case 2:
+    case '2':
 
         cout<<"Ha seleccionado escribir en puerto ROS"<<endl;
         break;
 
-    case 3:
+    case '3':
 
         cout<<"Ha seleccionado recibir imagen por ROS"<<endl;
         break;
 
-    case 4:
+    case '4':
 
         cout<<"Ha seleccionado extra ports"<<endl;
         break;
 
-    case 5:
+    case '5':
 
         cout<<"Ha seleccionado salir"<<endl;
         cout<<"Hasta luego, apagando..."<<endl;
