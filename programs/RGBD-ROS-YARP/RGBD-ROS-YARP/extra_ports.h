@@ -4,7 +4,8 @@
  *      RGBD Sensor: TIAGo
  *
  *      YARP Subscribe -> ROS Topic
- *      Type: Main
+ *      Class: Extra ports
+ *      Type: Headers
  *
  *      Robotics Lab
  *      Departamento de Ingeniería de Sistemas y Automática
@@ -13,6 +14,9 @@
  **************************************************************
  **************************************************************
  */
+
+#ifndef YARP_READ_H
+#define YARP_READ_H
 
 //***************************************
 //***************************************
@@ -41,11 +45,6 @@
 
 #define TOPIC_IMAGE "/xtion/rgb/image_raw/compressed"
 
-
-
-typedef sensor_msgs_CompressedImage Image_t;
-yarp::os::Subscriber<Image_t> inImagePort;
-
 //***************************************
 //***************************************
 // Espacios de nombres
@@ -56,50 +55,11 @@ using namespace cv;
 using namespace std;
 using namespace yarp::os;
 
-
-//---------------------------------------
-//---------------------------------------
-// Función main
-//---------------------------------------
-//---------------------------------------
-
-int main()
+class extra_ports
 {
-    cout<<endl;
-    cout << "\t RGBD Sensor: TIAGo" << endl;
-    cout << "\t YARP Subscribe -> ROS Topic" << endl;
-    cout<<endl;
-    cout << "\t Robotics Lab" << endl;
-    cout << "\t Departamento de Ingeniería de Sistemas y Automática" << endl;
-    cout << "\t Universidad Carlos III de Madrid" << endl;
-    cout<<endl;
+public:
+    extra_ports();
+    ~extra_ports();
+};
 
-    cout<<"Inicializando YARP"<<endl;
-
-    //***************************************
-    //***************************************
-    // Inicialización YARP
-    //***************************************
-    //***************************************
-
-    Network yarp;
-
-
-    return 0;
-}
-
-
-
-//++++++++++++++++++++++++++++++++++++++++
-// Funciones
-//++++++++++++++++++++++++++++++++++++++++
-
-
-
-
-
-
-
-
-
-
+#endif // EXTRA_PORTS_H
