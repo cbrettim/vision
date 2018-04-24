@@ -29,7 +29,7 @@ yarp_write::yarp_write()
     //          YARP: Envía a ROS
     //***************************************
 
-
+    cout<<"Suscribiendo al topic de ROS para escribir..."<<endl;
 
     //***************************************
     // Instanciamos nodo de YARP->ROS
@@ -58,13 +58,14 @@ yarp_write::yarp_write()
 void yarp_write::escribir()
 {
 
-
+    cout<<"Enviando de YARP a ROS"<<endl;
+    cout<<"Se va ha enviar:"<<endl;
     //***************************************
     //          YARP: Envía a ROS
     //***************************************
 
         data.data="Esto es lo que envío";
-
+        cout<<data.data<<endl;
         //***************************************
         // Publicamos a ROS
         //***************************************
