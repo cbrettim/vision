@@ -32,20 +32,6 @@
 #include <unistd.h>
 #include <opencv2/opencv.hpp>
 
-// Include ROS mesage headers. Generated with yarpidl_rosmsgs
-
-#include "../msg/sensor_msgs_CameraInfo.h"
-#include "../msg/sensor_msgs_Image.h"
-#include "../msg/sensor_msgs_CompressedImage.h"
-#include "../msg/sensor_msgs_PointCloud2.h"
-
-#define TOPIC_IMAGE "/xtion/rgb/image_raw/compressed"
-
-
-
-typedef sensor_msgs_CompressedImage Image_t;
-yarp::os::Subscriber<Image_t> inImagePort;
-
 //***************************************
 //***************************************
 // Espacios de nombres
@@ -74,7 +60,7 @@ int main()
     cout << "\t Universidad Carlos III de Madrid" << endl;
     cout<<endl;
 
-    cout<<"Inicializando YARP"<<endl;
+    cout<<"Inicializando YARP..."<<endl;
 
     //***************************************
     //***************************************
@@ -84,7 +70,61 @@ int main()
 
     Network yarp;
 
+    int seleccion=0;// Variable de control menú de selección
 
+    while(seleccion!=5){
+
+    cout<<endl;
+    cout<<"Por favor, selecione una de las opciones"<<endl;
+    cout<<"1. Leer de puerto ROS"<<endl;
+    cout<<"2. Escribir a puerto ROS"<<endl;
+    cout<<"3. Recibir imagen ROS"<<endl;
+    cout<<"4. Extra ports"<<endl;
+    cout<<"5. Salir"<<endl;
+    cout<<endl;
+    cout<<" Ha introducido:"<<endl;
+    cin>>seleccion;
+    cout<<endl;
+
+    switch (seleccion){
+
+
+    case 1:
+
+        cout<<"Ha seleccionado leer de puerto ROS"<<endl;
+        break;
+
+    case 2:
+
+        cout<<"Ha seleccionado escribir en puerto ROS"<<endl;
+        break;
+
+    case 3:
+
+        cout<<"Ha seleccionado recibir imagen por ROS"<<endl;
+        break;
+
+    case 4:
+
+        cout<<"Ha seleccionado extra ports"<<endl;
+        break;
+
+    case 5:
+
+        cout<<"Ha seleccionado salir"<<endl;
+        cout<<"Hasta luego, apagando..."<<endl;
+        break;
+
+    default:
+        cout<<"La opción introducida no es correcta, porfavor vuelva a intentarlo"<<endl;
+
+
+
+    }
+
+
+
+}
     return 0;
 }
 
