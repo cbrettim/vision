@@ -41,6 +41,7 @@
 #include <image.h>
 #include <yarp_read.h>
 #include <yarp_write.h>
+#include <ip_camera.h>
 
 //***************************************
 //***************************************
@@ -89,7 +90,7 @@ int main()
 
     char seleccion='0';// Variable de control menú de selección
 
-    while(seleccion!='6'){
+    while(seleccion!='7'){
 
     cout<<endl;
     cout<<"Por favor, selecione una de las opciones"<<endl;
@@ -98,7 +99,8 @@ int main()
     cout<<"3. Recibir imagen ROS"<<endl;
     cout<<"4. Extra ports"<<endl;
     cout<<"5. Tratar imagen"<<endl;
-    cout<<"6. Salir"<<endl;
+    cout<<"6. Webcam ip: TIAGo"<<endl;
+    cout<<"7. Salir"<<endl;
     cout<<endl;
     cout<<" Ha introducido:"<<endl;
     cin>>seleccion;
@@ -143,6 +145,14 @@ int main()
         break;
 
     case '6':
+
+        cout<<"Ha seleccionado ver webcam ip de TIAGo"<<endl;
+        ip_camera webcam_tiago;
+        webcam_tiago.ver_ip_camera();
+        break;
+
+
+    case '7':
 
         cout<<"Ha seleccionado salir"<<endl;
         cout<<"Hasta luego, apagando..."<<endl;
