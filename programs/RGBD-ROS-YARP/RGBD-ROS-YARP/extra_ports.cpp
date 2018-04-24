@@ -26,6 +26,12 @@
 
 extra_ports::extra_ports()
 {
+
+    cout<<"Generando puertos YARP de entrada y de salida"<<endl;
+    cout<<"Nombres de los puertos:"<<endl;
+    cout<<"Puerto de entrada: /puerto_in"<<endl;
+    cout<<"Puerto de salida: /puerto_out"<<endl;
+
     //***************************************
     // Instanciar Bottles
     //***************************************

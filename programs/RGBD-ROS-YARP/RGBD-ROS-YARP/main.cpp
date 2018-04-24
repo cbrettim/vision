@@ -24,13 +24,23 @@
 #include <yarp/os/all.h>
 #include <stdio.h>
 #include <image.h>
-
-
 #include <string>
 #include <vector>
 #include <sys/time.h>
 #include <unistd.h>
 #include <opencv2/opencv.hpp>
+
+//++++++++++++++
+//++++++++++++++
+// Clases
+//++++++++++++++
+//++++++++++++++
+
+#include <extra_ports.h>
+#include <get_image.h>
+#include <image.h>
+#include <yarp_read.h>
+#include <yarp_write.h>
 
 //***************************************
 //***************************************
@@ -92,6 +102,8 @@ int main()
     case '1':
 
         cout<<"Ha seleccionado leer de puerto ROS"<<endl;
+
+
         break;
 
     case '2':
@@ -107,6 +119,8 @@ int main()
     case '4':
 
         cout<<"Ha seleccionado extra ports"<<endl;
+        extra_ports objeto_extra_ports;
+
         break;
 
     case '5':
