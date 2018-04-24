@@ -59,7 +59,17 @@ class image
 public:
 
     image();
+
     ~image();
+
+
+//++++++++++++++
+// Variables
+//++++++++++++++
+
+int fil;
+int col;
+string datos;
 
 
 };
