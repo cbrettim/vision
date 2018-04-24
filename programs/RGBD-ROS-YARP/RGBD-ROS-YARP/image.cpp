@@ -20,10 +20,19 @@ image::image()
 {
 }
 
-void image::leer_imagen()
+void image::leer_imagen(string ruta)
 {
     Mat imagen;
     imagen.imread(ruta, CV_LOAD_IMAGE_COLOR);
+    if(!imagen.data )
+        {
+            cout<<"Lo siento, no se ha podido abri la imagen"<<endl;
+            return -1;
+        }
+    namedWindow("Imagen: TIAGo", WINDOW_AUTOSIZE );
+    imshow("Imagen: TIAGo", image );
+
+    waitKey(0);
 }
 
 
