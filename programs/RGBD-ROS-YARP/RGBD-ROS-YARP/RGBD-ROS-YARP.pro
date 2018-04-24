@@ -9,7 +9,8 @@ SOURCES += main.cpp \
     yarp_read.cpp \
     yarp_write.cpp \
     get_image.cpp \
-    extra_ports.cpp
+    extra_ports.cpp \
+    ip_camera.cpp
 
 HEADERS += \
     image.h \
@@ -17,5 +18,6 @@ HEADERS += \
     yarp_read.h \
     yarp_write.h \
     get_image.h \
-    extra_ports.h
+    extra_ports.h \
+    ip_camera.h
 
