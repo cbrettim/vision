@@ -59,7 +59,7 @@ class image
 public:
 
     image();
-
+    void leer_imagen(string ruta);
     ~image();
 
 
@@ -70,6 +70,7 @@ public:
 int fil;
 int col;
 string datos;
+string ruta="/home/tiagoentrenamiento/repos/vision/programs/RGBD-ROS-YARP/images/image.jpg";
 
 
 };
