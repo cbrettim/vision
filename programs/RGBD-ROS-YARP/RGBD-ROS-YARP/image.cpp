@@ -1,12 +1,25 @@
+/**************************************************************
+ **************************************************************
+ *
+ *      RGBD Sensor: TIAGo
+ *
+ *      YARP Subscribe -> ROS Topic
+ *      Class: Image
+ *      Type: Sources
+ *
+ *      Robotics Lab
+ *      Departamento de Ingeniería de Sistemas y Automática
+ *      Universidad Carlos III de Madrid
+ *
+ **************************************************************
+ **************************************************************
+ */
 #include "image.h"
-
-// Descripión de constructor vacio
 
 image::image()
 {
 }
 
-// Descripión de destructor
 
 image::~image()
 {
