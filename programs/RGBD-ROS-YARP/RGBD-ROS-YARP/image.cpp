@@ -22,7 +22,8 @@ image::image()
 
 void image::leer_imagen()
 {
-
+    Mat imagen;
+    imagen.imread(ruta, CV_LOAD_IMAGE_COLOR);
 }
 
 
