@@ -109,6 +109,8 @@ int main()
     case '2':
 
         cout<<"Ha seleccionado escribir en puerto ROS"<<endl;
+        yarp_write objeto_escribir_yarp;
+        objeto_escribir_yarp.escribir();
         break;
 
     case '3':
