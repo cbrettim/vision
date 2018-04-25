@@ -33,6 +33,10 @@ void image::leer_imagen(string ruta)
     imshow("Imagen: TIAGo", imagen );
 
     waitKey(0);
+
+
+    fil= imagen.get(CV_CAP_PROP_FRAME_WIDTH);
+    col= imagen.get(CV_CAP_PROP_FRAME_HEIGHT);
 }
 
 

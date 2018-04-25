@@ -63,6 +63,14 @@ public:
     void solicitar_imagen();// Solicita imagen a ROS
     Mat decodeImage(Image_t *message);// Usa OpenCV para mostrar la imagen
     ~get_image();
+
+//+++++++++++++
+// Variables
+//+++++++++++++
+
+double fil;
+double col;
+
 };
 
 #endif // GET_IMAGE_H
