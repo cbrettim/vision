@@ -33,6 +33,11 @@ int ip_camera::ver_ip_camera()
     Mat cameraFrame;
     stream1.read(cameraFrame);
     imshow("Webcam: TIAGo", cameraFrame);
+
+
+    fil= cameraFrame.get(CV_CAP_PROP_FRAME_WIDTH);
+    col= cameraFrame.get(CV_CAP_PROP_FRAME_HEIGHT);
+
     if (waitKey(30) >= 0)
     break;
     }
