@@ -64,6 +64,15 @@ public:
     ip_camera();
     int ver_ip_camera();
     ~ip_camera();
+
+
+//++++++++++++
+// Variables
+//++++++++++++
+
+double fil;
+double col;
+
 };
 
 #endif // IP_CAMERA_H
