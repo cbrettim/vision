@@ -92,6 +92,10 @@ void get_image::solicitar_imagen()
 
     secs_used=(end.tv_sec - start.tv_sec);
     micros_used= ((secs_used*1000000) + end.tv_usec) - (start.tv_usec);
+
+
+    fil= rgbImage.get(CV_CAP_PROP_FRAME_WIDTH);
+    col= rgbImage.get(CV_CAP_PROP_FRAME_HEIGHT);
 }
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++
