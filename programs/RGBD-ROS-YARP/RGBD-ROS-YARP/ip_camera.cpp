@@ -23,7 +23,7 @@ ip_camera::ip_camera()
 
 int ip_camera::ver_ip_camera()
 {
-    VideoCapture stream1("https://tiago-38c:8080video?x.mjpeg");//NOTA: Comprobar
+    VideoCapture stream1("https://tiago-38c:8080/video?x.mjpeg");//NOTA: Comprobar
 
     if (!stream1.isOpened()) {
     cout<<"Lo siento, no he podido acceder a la webcam"<<endl;
