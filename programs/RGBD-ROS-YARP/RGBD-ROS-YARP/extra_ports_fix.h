@@ -15,8 +15,8 @@
  **************************************************************
  */
 
-#ifndef YARP_READ_H
-#define YARP_READ_H
+#ifndef EXTRA_PORTS_FIX_H
+#define EXTRA_PORTS_FIX_H
 
 //***************************************
 //***************************************
@@ -62,4 +62,4 @@ public:
     ~extra_ports_fix();
 };
 
-#endif // EXTRA_PORTS_H
+#endif // EXTRA_PORTS_FIX_H
