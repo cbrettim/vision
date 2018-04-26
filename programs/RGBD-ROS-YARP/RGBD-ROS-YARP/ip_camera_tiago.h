@@ -15,8 +15,8 @@
  **************************************************************
  */
 
-#ifndef YARP_READ_H
-#define YARP_READ_H
+#ifndef IP_CAMERA_TIAGO_H
+#define IP_CAMERA_TIAGO_H
 
 //***************************************
 //***************************************
@@ -75,4 +75,4 @@ double col;
 
 };
 
-#endif // IP_CAMERA_H
+#endif // IP_CAMERA_TIAGO_H
