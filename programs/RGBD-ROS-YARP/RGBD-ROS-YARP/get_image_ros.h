@@ -15,8 +15,8 @@
  **************************************************************
  */
 
-#ifndef YARP_READ_H
-#define YARP_READ_H
+#ifndef GET_IMAGE_ROS_H
+#define GET_IMAGE_ROS_H
 
 //***************************************
 //***************************************
@@ -73,4 +73,4 @@ double col;
 
 };
 
-#endif // GET_IMAGE_H
+#endif // GET_IMAGE_ROS_H
