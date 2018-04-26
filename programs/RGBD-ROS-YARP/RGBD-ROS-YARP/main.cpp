@@ -36,12 +36,12 @@
 //++++++++++++++
 //++++++++++++++
 
-#include <extra_ports.h>
-#include <get_image.h>
+#include <extra_ports_fix.h>
+#include <get_image_ros.h>
 #include <image.h>
-#include <yarp_read.h>
-#include <yarp_write.h>
-#include <ip_camera.h>
+#include <yarp_read_ros.h>
+#include <yarp_write_ros.h>
+#include <ip_camera_tiago.h>
 
 //***************************************
 //***************************************
@@ -112,28 +112,28 @@ int main()
     case '1':
 
         cout<<"Ha seleccionado leer de puerto ROS"<<endl;
-        yarp_read objeto_recibir_yarp;
+        yarp_read_ros objeto_recibir_yarp;
         objeto_recibir_yarp.recibir();
         break;
 
     case '2':
 
         cout<<"Ha seleccionado escribir en puerto ROS"<<endl;
-        yarp_write objeto_escribir_yarp;
+        yarp_write_ros objeto_escribir_yarp;
         objeto_escribir_yarp.escribir();
         break;
 
     case '3':
 
         cout<<"Ha seleccionado recibir imagen por ROS"<<endl;
-        get_image objeto_get_image;
+        get_image_ros objeto_get_image;
         objeto_get_image.solicitar_imagen();
         break;
 
     case '4':
 
         cout<<"Ha seleccionado extra ports"<<endl;
-        extra_ports objeto_extra_ports;
+        extra_ports_fix objeto_extra_ports;
 
         break;
 
@@ -147,7 +147,7 @@ int main()
     case '6':
 
         cout<<"Ha seleccionado ver webcam ip de TIAGo"<<endl;
-        ip_camera webcam_tiago;
+        ip_camera_tiago webcam_tiago;
         webcam_tiago.ver_ip_camera();
         break;
 

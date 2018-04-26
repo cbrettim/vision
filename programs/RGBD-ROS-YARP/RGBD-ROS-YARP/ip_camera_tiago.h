@@ -4,7 +4,7 @@
  *      RGBD Sensor: TIAGo
  *
  *      YARP Subscribe -> ROS Topic
- *      Class: YARP Read
+ *      Class: IP camera
  *      Type: Headers
  *
  *      Robotics Lab
@@ -35,6 +35,8 @@
 #include <sys/time.h>
 #include <unistd.h>
 #include <opencv2/opencv.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
 
 // Include ROS mesage headers. Generated with yarpidl_rosmsgs
 
@@ -55,22 +57,22 @@ using namespace cv;
 using namespace std;
 using namespace yarp::os;
 
-class yarp_read
+
+class ip_camera_tiago
 {
 public:
-    yarp_read();// Inicializa y se suscribe al puerto ROS
-    string recibir();// Recibe datos de ROS
-    ~yarp_read();
+    ip_camera_tiago();
+    int ver_ip_camera();
+    ~ip_camera_tiago();
 
-//----------------------
-//----------------------
-//  Variables
-//----------------------
-//----------------------
 
-protected:
+//++++++++++++
+// Variables
+//++++++++++++
 
-string datos_recibidos;
+double fil;
+double col;
+
 };
 
-#endif // YARP_READ_H
+#endif // IP_CAMERA_H

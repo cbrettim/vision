@@ -15,7 +15,7 @@
  **************************************************************
  */
 
-#include "extra_ports.h"
+#include "extra_ports_fix.h"
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++
 //++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -24,7 +24,7 @@
 //+++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
-extra_ports::extra_ports()
+extra_ports_fix::extra_ports_fix()
 {
 
     cout<<"Generando puertos YARP de entrada y de salida"<<endl;
@@ -61,7 +61,7 @@ extra_ports::extra_ports()
     }
 }
 
-extra_ports::~extra_ports()
+extra_ports_fix::~extra_ports_fix()
 {
 
 }

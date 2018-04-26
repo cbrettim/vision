@@ -15,13 +15,13 @@
  **************************************************************
  */
 
-#include "ip_camera.h"
+#include "ip_camera_tiago.h"
 
-ip_camera::ip_camera()
+ip_camera_tiago::ip_camera_tiago()
 {
 }
 
-int ip_camera::ver_ip_camera()
+int ip_camera_tiago::ver_ip_camera()
 {
     VideoCapture stream1("https://tiago-38c:8080/video?x.mjpeg");//NOTA: Comprobar
 
@@ -44,7 +44,7 @@ int ip_camera::ver_ip_camera()
     return 0;
 }
 
-ip_camera::~ip_camera()
+ip_camera_tiago::~ip_camera_tiago()
 {
 
 }

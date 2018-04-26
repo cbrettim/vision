@@ -15,7 +15,7 @@
  **************************************************************
  */
 
-#include "yarp_write.h"
+#include "yarp_write_ros.h"
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++
 //++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -23,7 +23,7 @@
 //++++++++++++++++++++++++++++++++++++++++++++++++++
 //+++++++++++++++++++++++++++++++++++++++++++++++++++
 
-yarp_write::yarp_write()
+yarp_write_ros::yarp_write_ros()
 {
     //***************************************
     //          YARP: Envía a ROS
@@ -55,7 +55,7 @@ yarp_write::yarp_write()
 //++++++++++++++++++++++++++++++++++++++++++++++++++
 //+++++++++++++++++++++++++++++++++++++++++++++++++++
 
-void yarp_write::escribir()
+void yarp_write_ros::escribir()
 {
 
     cout<<"Enviando de YARP a ROS"<<endl;
@@ -74,7 +74,7 @@ void yarp_write::escribir()
 
 }
 
-yarp_write::~yarp_write()
+yarp_write_ros::~yarp_write_ros()
 {
 
 }

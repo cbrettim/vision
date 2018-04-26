@@ -14,14 +14,14 @@
  **************************************************************
  **************************************************************
  */
-#include "get_image.h"
+#include "get_image_ros.h"
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++
 //++++++++++++++++++++++++++++++++++++++++++++++++++
 //  Constructor: Inicializa nodo
 //++++++++++++++++++++++++++++++++++++++++++++++++++
 //+++++++++++++++++++++++++++++++++++++++++++++++++++
-get_image::get_image()
+get_image_ros::get_image_ros()
 {
     cout<<" Conectando a topic ROS /obj_image_test"<<endl;
     yarp::os::Node rosNode("/obj_image_test");
@@ -33,7 +33,7 @@ get_image::get_image()
 //++++++++++++++++++++++++++++++++++++++++++++++++++
 //+++++++++++++++++++++++++++++++++++++++++++++++++++
 
-void get_image::solicitar_imagen()
+void get_image_ros::solicitar_imagen()
 {
     //***************************************
     // Obtener una imagen de TIAGo
@@ -112,7 +112,7 @@ Mat decodeImage(Image_t *message) {
     return image;
 }
 
-get_image::~get_image()
+get_image_ros::~get_image_ros()
 {
 
 }

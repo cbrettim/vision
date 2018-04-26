@@ -4,7 +4,7 @@
  *      RGBD Sensor: TIAGo
  *
  *      YARP Subscribe -> ROS Topic
- *      Class: Get image
+ *      Class: Extra ports
  *      Type: Headers
  *
  *      Robotics Lab
@@ -55,22 +55,11 @@ using namespace cv;
 using namespace std;
 using namespace yarp::os;
 
-
-class get_image
+class extra_ports_fix
 {
 public:
-    get_image();// Constructor inicializa
-    void solicitar_imagen();// Solicita imagen a ROS
-    Mat decodeImage(Image_t *message);// Usa OpenCV para mostrar la imagen
-    ~get_image();
-
-//+++++++++++++
-// Variables
-//+++++++++++++
-
-double fil;
-double col;
-
+    extra_ports_fix();// Puertos a usar en un futuro
+    ~extra_ports_fix();
 };
 
-#endif // GET_IMAGE_H
+#endif // EXTRA_PORTS_H

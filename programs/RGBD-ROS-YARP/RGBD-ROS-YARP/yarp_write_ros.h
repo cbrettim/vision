@@ -15,8 +15,8 @@
  **************************************************************
  */
 
-#ifndef YARP_READ_H
-#define YARP_READ_H
+#ifndef YARP_WRITE_ROS_H
+#define YARP_WRITE_ROS_H
 
 //***************************************
 //***************************************
@@ -56,12 +56,12 @@ using namespace std;
 using namespace yarp::os;
 
 
-class yarp_write
+class yarp_write_ros
 {
 public:
-    yarp_write();// Inicializa y suscribe del puerto de ROS
+    yarp_write_ros();// Inicializa y suscribe del puerto de ROS
     void escribir();// Escribe
-    ~yarp_write();
+    ~yarp_write_ros();
 };
 
-#endif // YARP_WRITE_H
+#endif // YARP_WRITE_ROS_H

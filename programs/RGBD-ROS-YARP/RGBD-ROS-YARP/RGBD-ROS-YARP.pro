@@ -5,19 +5,17 @@ CONFIG -= qt
 
 SOURCES += main.cpp \
     image.cpp \
-    yarp_read.cpp \
-    yarp_read.cpp \
-    yarp_write.cpp \
-    get_image.cpp \
-    extra_ports.cpp \
-    ip_camera.cpp
+    yarp_read_ros.cpp \
+    yarp_write_ros.cpp \
+    get_image_ros.cpp \
+    extra_ports_fix.cpp \
+    ip_camera_tiago.cpp
 
 HEADERS += \
     image.h \
-    yarp_read.h \
-    yarp_read.h \
-    yarp_write.h \
-    get_image.h \
-    extra_ports.h \
-    ip_camera.h
+    yarp_read_ros.h \
+    yarp_write_ros.h \
+    get_image_ros.h \
+    extra_ports_fix.h \
+    ip_camera_tiago.h
 
