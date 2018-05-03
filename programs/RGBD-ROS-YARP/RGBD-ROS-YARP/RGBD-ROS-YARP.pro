@@ -18,4 +18,5 @@ HEADERS += \
     get_image_ros.h \
     extra_ports_fix.h \
     ip_camera_tiago.h
-
+INCLUDEPATH += /usr/local/include/opencv
+LIBS += -L/usr/local/lib  -lopencv_videostab -lopencv_objdetect -lopencv_ml -lopencv_photo -lopencv_superres -lopencv_dnn -lopencv_shape -lopencv_video -lopencv_stitching -lopencv_calib3d -lopencv_features2d -lopencv_highgui -lopencv_videoio -lopencv_imgcodecs -lopencv_imgproc -lopencv_flann -lopencv_core
