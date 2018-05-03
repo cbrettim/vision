@@ -24,7 +24,7 @@
 get_image_ros::get_image_ros()
 {
     cout<<" Conectando a topic ROS /obj_image_test"<<endl;
-    yarp::os::Node rosNode("/obj_image_test");
+ //   yarp::os::Node rosNode("/obj_image_test");
 }
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -39,7 +39,7 @@ void get_image_ros::solicitar_imagen()
     // Obtener una imagen de TIAGo
     //***************************************
 
-        cout<<"Analizando red YARP..."<<endl;
+   /*     cout<<"Analizando red YARP..."<<endl;
         fflush(stdout);
         if (!yarp.checkNetwork()) {
             cout<<"Lo siento, no se ha encontrado red de YARP"<<endl;
@@ -95,7 +95,7 @@ void get_image_ros::solicitar_imagen()
 
 
     fil= rgbImage.get(CV_CAP_PROP_FRAME_WIDTH);
-    col= rgbImage.get(CV_CAP_PROP_FRAME_HEIGHT);
+    col= rgbImage.get(CV_CAP_PROP_FRAME_HEIGHT);*/
 }
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -103,14 +103,14 @@ void get_image_ros::solicitar_imagen()
 //  Función: Uso de OpenCV para la imagen
 //++++++++++++++++++++++++++++++++++++++++++++++++++
 //+++++++++++++++++++++++++++++++++++++++++++++++++++
-
+/*
 Mat decodeImage(Image_t *message) {
-    Mat image;
+ /*   Mat image;
 
     image = imdecode(Mat(message->data), IMWRITE_JPEG_QUALITY);
 
-    return image;
-}
+    return image;*/
+}*/
 
 get_image_ros::~get_image_ros()
 {

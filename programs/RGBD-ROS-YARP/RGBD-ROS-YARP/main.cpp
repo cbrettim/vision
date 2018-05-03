@@ -23,7 +23,6 @@
 #include <iostream>
 #include <yarp/os/all.h>
 #include <stdio.h>
-#include <image.h>
 #include <string>
 #include <vector>
 #include <sys/time.h>

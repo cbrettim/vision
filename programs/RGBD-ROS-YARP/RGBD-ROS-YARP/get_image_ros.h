@@ -37,12 +37,12 @@
 #include <opencv2/opencv.hpp>
 
 // Include ROS mesage headers. Generated with yarpidl_rosmsgs
-
+/*
 #include "../msg/sensor_msgs_CameraInfo.h"
 #include "../msg/sensor_msgs_Image.h"
 #include "../msg/sensor_msgs_CompressedImage.h"
 #include "../msg/sensor_msgs_PointCloud2.h"
-
+*/
 #define TOPIC_IMAGE "/xtion/rgb/image_raw/compressed"
 
 //***************************************
@@ -61,7 +61,7 @@ class get_image_ros
 public:
     get_image_ros();// Constructor inicializa
     void solicitar_imagen();// Solicita imagen a ROS
-    Mat decodeImage(Image_t *message);// Usa OpenCV para mostrar la imagen
+    //Mat decodeImage(Image_t *message);// Usa OpenCV para mostrar la imagen
     ~get_image_ros();
 
 //+++++++++++++
