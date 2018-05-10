@@ -65,8 +65,8 @@ string yarp_read_ros::recibir()
     // Leemos datos del topic
     //***************************************
 
-        subscriber.read(data);
-        cout << "Datos recibidos:" << data.data << " " << endl;
+        subscriber.read(datos_recibidos);
+        cout << "Datos recibidos:" << datos_recibidos.data << " " << endl;
 }
 
 yarp_read_ros::~yarp_read_ros()

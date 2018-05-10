@@ -64,13 +64,13 @@ void yarp_write_ros::escribir()
     //          YARP: Envía a ROS
     //***************************************
 
-        data.data="Esto es lo que envío";
-        cout<<data.data<<endl;
+        datos_a_enviar.data="Esto es lo que envío";
+        cout<<datos_a_enviar.data<<endl;
         //***************************************
         // Publicamos a ROS
         //***************************************
 
-        publisher.write(data);
+        publisher.write(datos_a_enviar);
 
 }
 

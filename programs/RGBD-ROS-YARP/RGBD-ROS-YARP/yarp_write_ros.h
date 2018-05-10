@@ -62,6 +62,18 @@ public:
     yarp_write_ros();// Inicializa y suscribe del puerto de ROS
     void escribir();// Escribe
     ~yarp_write_ros();
+
+
+//----------------------
+//----------------------
+//  Variables
+//----------------------
+//----------------------
+
+protected:
+
+string datos_a_enviar;
+
 };
 
 #endif // YARP_WRITE_ROS_H
