@@ -24,7 +24,7 @@
 get_image_ros::get_image_ros()
 {
     cout<<" Conectando a topic ROS /obj_image_test"<<endl;
- //   yarp::os::Node rosNode("/obj_image_test");
+ //   Node rosNode("/obj_image_test");
 }
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -110,7 +110,7 @@ Mat decodeImage(Image_t *message) {
     image = imdecode(Mat(message->data), IMWRITE_JPEG_QUALITY);
 
     return image;*/
-}*/
+//}*/
 
 get_image_ros::~get_image_ros()
 {
