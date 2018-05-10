@@ -67,7 +67,26 @@ string yarp_read_ros::recibir()
 
         subscriber.read(datos_recibidos);
         cout << "Datos recibidos:" << datos_recibidos.data << " " << endl;
+
+        BufferedPort<ImageOf<PixelRgb> > puerto_imagen;
+        puerto_imagen.open("/imagen_ROS");
+        yarp.connect("/yarp/listener","/image_ROS");
+        ImageOf<PixelRgb> *img = puerto_imagen.read();
+        img.resize(800,600);
+        IplImage *cvImage = cvCreateImage(cvSize(img.width(),
+                                                 img.height()),
+                                          IPL_DEPTH_8U, 3 );
+        cvCvtColor((IplImage*)img.getIplImage(), cvImage, CV_RGB2BGR);
+
+        Mat image_opencv = cvarrToMat(cvImage);
+
+        // Introducir los HAAR aquí
+
+        cvNamedWindow("Imagen: ROS",1);
+        cvShowImage("Imagen: ROS",image_opencv);
+
 }
+
 
 yarp_read_ros::~yarp_read_ros()
 {

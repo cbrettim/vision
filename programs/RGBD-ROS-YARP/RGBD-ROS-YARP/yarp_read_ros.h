@@ -28,8 +28,8 @@
 #include <yarp/os/all.h>
 #include <stdio.h>
 #include <image.h>
-
-
+#include <yarp/os/all.h>
+#include <yarp/sig/all.h>
 #include <string>
 #include <vector>
 #include <sys/time.h>
@@ -54,6 +54,8 @@
 using namespace cv;
 using namespace std;
 using namespace yarp::os;
+using namespace yarp::sig;
+using namespace yarp::sig::draw;
 
 class yarp_read_ros
 {
