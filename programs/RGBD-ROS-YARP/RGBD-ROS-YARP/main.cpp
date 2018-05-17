@@ -113,6 +113,7 @@ int main()
         cout<<"Ha seleccionado leer de puerto ROS"<<endl;
         yarp_read_ros objeto_recibir_yarp;
         objeto_recibir_yarp.recibir();
+        objeto_recibir_yarp.~yarp_read_ros();// Cambiar para que el destructor sea automático, sino genera conflicto por el nodo yarp->ros
         break;
 
     case '2':
@@ -120,6 +121,7 @@ int main()
         cout<<"Ha seleccionado escribir en puerto ROS"<<endl;
         yarp_write_ros objeto_escribir_yarp;
         objeto_escribir_yarp.escribir();
+        objeto_escribir_yarp.~yarp_write_ros(); // Cambiar para que el destructor sea automático, sino genera conflicto por el nodo yarp->ros
         break;
 
     case '3':
@@ -127,14 +129,14 @@ int main()
         cout<<"Ha seleccionado recibir imagen por ROS"<<endl;
         get_image_ros objeto_get_image;
         objeto_get_image.solicitar_imagen();
+        objeto_get_image.~get_image_ros(); // Cambiar para que el destructor sea automático, sino genera conflicto por el nodo yarp->ros
         break;
 
     case '4':
 
         cout<<"Ha seleccionado extra ports"<<endl;
         extra_ports_fix objeto_extra_ports;
-
-
+        objeto_extra_ports.~extra_ports_fix(); // Cambiar para que el destructor sea automático, sino genera conflicto por el nodo yarp->ros
         break;
 
     case '5':
@@ -142,6 +144,7 @@ int main()
         cout<<"Ha seleccionado tratar imagen"<<endl;
         image objeto_de_imagen_tratar;
         objeto_de_imagen_tratar.leer_imagen(ruta);
+
         break;
 
     case '6':
