@@ -144,7 +144,7 @@ int main()
         cout<<"Ha seleccionado tratar imagen"<<endl;
         image objeto_de_imagen_tratar;
         objeto_de_imagen_tratar.leer_imagen(ruta);
-
+        objeto_de_imagen_tratar.~image(); // Cambiar para que el destructor sea automático, sino genera conflicto por el nodo yarp->ros
         break;
 
     case '6':
@@ -152,6 +152,7 @@ int main()
         cout<<"Ha seleccionado ver webcam ip de TIAGo"<<endl;
         ip_camera_tiago webcam_tiago;
         webcam_tiago.ver_ip_camera();
+        webcam_tiago.~ip_camera_tiago(); // Cambiar para que el destructor sea automático, sino genera conflicto por el nodo yarp->ros
         break;
 
 
