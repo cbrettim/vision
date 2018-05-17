@@ -35,7 +35,8 @@ yarp_write_ros::yarp_write_ros()
     // Instanciamos nodo de YARP->ROS
     //***************************************
 
-    Node node("/yarp/talker");
+    // Node node("/yarp/talker"); Maybe
+    Node node_2("/yarp/talker");
 
     //********************************************
     // Suscripción al topic de ROS que se prepare
