@@ -55,6 +55,10 @@ void yarp_read_ros_image::leer()
 
            return;
        }
+
+    Mat inCvMat = decodeImage(imageFrame);
+
+    // Introducir HAAR
 }
 
 yarp_read_ros_image::~yarp_read_ros_image()
