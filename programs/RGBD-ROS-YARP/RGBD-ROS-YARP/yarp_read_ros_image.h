@@ -52,7 +52,7 @@ class yarp_read_ros_image
 {
 public:
     yarp_read_ros_image();
-
+    void leer();
 
     //----------------------
     //----------------------

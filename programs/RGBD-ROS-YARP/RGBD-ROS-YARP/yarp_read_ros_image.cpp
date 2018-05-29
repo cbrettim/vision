@@ -45,3 +45,14 @@ yarp_read_ros_image::yarp_read_ros_image()
     }
 
 }
+
+void yarp_read_ros_image::leer()
+{
+
+    Image_t *imageFrame;
+    imageFrame = inImagePort->read(FALSE);
+       if (imageFrame == YARP_NULLPTR) {
+
+           return;
+   }
+}
