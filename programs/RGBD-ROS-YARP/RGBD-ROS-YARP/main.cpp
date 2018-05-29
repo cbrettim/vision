@@ -41,6 +41,7 @@
 #include <yarp_read_ros.h>
 #include <yarp_write_ros.h>
 #include <ip_camera_tiago.h>
+#include <yarp_read_ros_image.h>
 
 //***************************************
 //***************************************
@@ -99,7 +100,8 @@ int main()
     cout<<"4. Extra ports"<<endl;
     cout<<"5. Tratar imagen"<<endl;
     cout<<"6. Webcam ip: TIAGo"<<endl;
-    cout<<"7. Salir"<<endl;
+    cout<<"7. Recibir imagen ROS 2"<<endl;
+    cout<<"8. Salir"<<endl;
     cout<<endl;
     cout<<" Ha introducido:"<<endl;
     cin>>seleccion;
@@ -155,8 +157,15 @@ int main()
         webcam_tiago.~ip_camera_tiago(); // Cambiar para que el destructor sea automático, sino genera conflicto por el nodo yarp->ros
         break;
 
-
     case '7':
+
+        cout<<"Ha seleccionado recibir imagen por ROS 2"<<endl;
+        yarp_read_ros_image objeto_recibir_yarp_imagen;
+        objeto_recibir_yarp_imagen.leer();
+        objeto_recibir_yarp_imagen.~yarp_read_ros_image();
+        break;
+
+    case '8':
 
         cout<<"Ha seleccionado salir"<<endl;
         cout<<"Hasta luego, apagando..."<<endl;
