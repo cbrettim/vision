@@ -54,5 +54,11 @@ void yarp_read_ros_image::leer()
        if (imageFrame == YARP_NULLPTR) {
 
            return;
-   }
+       }
+}
+
+yarp_read_ros_image::~yarp_read_ros_image()
+{
+
+
 }
